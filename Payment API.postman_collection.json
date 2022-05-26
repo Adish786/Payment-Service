@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "bd85b35d-da62-4105-8a9d-1d1f3bb4cda8",
+		"name": "Payment API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9894690"
+	},
+	"item": [
+		{
+			"name": "Payment Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Get By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/paymentById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"paymentById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Get By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/payment/Alisher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"payment",
+						"Alisher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Post Single Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentserviceprovider\": \"Tech Mahindra\",\r\n    \"totalpayout\": \"10000\",\r\n    \"quantity\": \"150\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8003/addPayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"addPayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Post Multiple Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"paymentserviceprovider\": \"Tech Mahindra\",\r\n        \"totalpayout\": \"10000\",\r\n        \"quantity\": \"150\"\r\n    },\r\n    {\r\n        \"paymentserviceprovider\": \"Tech Mahindra\",\r\n        \"totalpayout\": \"10000\",\r\n        \"quantity\": \"150\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8003/addPayments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"addPayments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"paymentserviceprovider\": \"Tech Mahindra\",\r\n    \"totalpayout\": \"500\",\r\n    \"quantity\": \"150\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8003/update/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"update",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Delete By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8003/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

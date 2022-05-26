@@ -1,10 +1,10 @@
 package com.common.retail.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.common.retail.model.Payment;
 import com.common.retail.repository.PaymentRepo;
 
@@ -14,6 +14,8 @@ public class PaymentService {
 	
 	 @Autowired
 	    private PaymentRepo repository;
+	 
+
 
 	    public Payment savePayment(Payment payment) {
 	        return repository.save(payment);
@@ -28,7 +30,7 @@ public class PaymentService {
 	    }
 
 	    public Payment getPaymentById(int id) {
-	        return repository.findById(id).orElse(null);
+	        return repository.findById(id);
 	    }
 
 	    public Payment getpaymentserviceprovider(String name) {
@@ -39,7 +41,9 @@ public class PaymentService {
 	        repository.deleteById(id);
 	        return "Payment removed !! " + id;
 	    }
-/*
+	    
+	    /*
+	    @Transactional
 	    public Payment updatePayment(Payment payment) {
 	    	Payment existingPayment = repository.findById(payment.getId()).orElse(null);
 	    	existingPayment.setId(payment.getId());
@@ -48,7 +52,9 @@ public class PaymentService {
 	    	existingPayment.setTotalpayout(payment.getTotalpayout());
 	        return repository.save(existingPayment);
 	    }
-*/
+	    */
+   
+/*	    
 	    public Payment updatePayment(Payment payment) {
 	    	Payment outPayment = null;
 
@@ -83,4 +89,5 @@ public class PaymentService {
 	        return outPayment;
 	    }
 
+	*/    
 }
